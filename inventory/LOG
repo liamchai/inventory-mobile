@@ -1,1 +1,5 @@
-2020/09/26-11:17:53.736 1c0c Delete type=3 #1
+2020/09/26-11:55:56.200 34ec Recovering log #6
+2020/09/26-11:55:56.200 34ec Level-0 table #8: started
+2020/09/26-11:55:56.204 34ec Level-0 table #8: 237 bytes OK
+2020/09/26-11:55:56.212 34ec Delete type=0 #6
+2020/09/26-11:55:56.213 34ec Delete type=3 #4
