@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./inventory/main/main.module').then( m => m.MainPageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./inventory/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
 
 ];
 
