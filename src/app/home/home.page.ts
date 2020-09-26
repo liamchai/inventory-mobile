@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { DatabaseService } from '../services/database.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class HomePage {
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
 
-  constructor(private databaseService: DatabaseService) {
+  constructor(
+    private databaseService: DatabaseService,
+    private navController: NavController
+  ) {
     this.db = this.databaseService.db;
   }
 
@@ -22,6 +26,7 @@ export class HomePage {
       .get(this.userPin)
       .then(() => {
         // TODO : Navigate into Dashboard
+        this.navController.navigateRoot('main');
       })
       .catch(() => {
         this.isUnauthorized = true;
