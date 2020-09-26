@@ -8,6 +8,7 @@ import { DatabaseService } from '../services/database.service';
 })
 export class HomePage {
   userPin: number;
+  isUnauthorized: boolean = false;
   db: any;
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
@@ -17,7 +18,14 @@ export class HomePage {
   }
 
   onLoginButtonClick() {
-    console.log(this.userPin);
+    this.db
+      .get(this.userPin)
+      .then(() => {
+        // TODO : Navigate into Dashboard
+      })
+      .catch(() => {
+        this.isUnauthorized = true;
+      });
   }
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';

@@ -40,6 +40,9 @@
               (click)="hideShowPassword()"
             ></ion-icon>
           </ion-item>
+          <ion-item *ngIf="isUnauthorized" lines="none" class="ion-text-center">
+            <ion-label color="danger">Wrong Pin</ion-label></ion-item
+          >
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
