@@ -24,14 +24,21 @@ export class HomePage {
   }
 
   onLoginButtonClick() {
-    this.authenticationService.login(this.userPin);
-
-    if (this.authenticationService.isAuthorized) {
-      this.navController.navigateRoot(['main/dashboard']);
-    } else {
-      this.isAuthorized = false;
-    }
+    this.db
+      .get(this.userPin)
+      .then(() => {
+        this.authenticationService.setIsAuthorized(true);
+        this.authenticationService.setUserPin(this.userPin);
+        this.isAuthorized = true;
+        this.navController.navigateRoot(['main/dashboard']);
+      })
+      .catch(() => {
+        this.authenticationService.setIsAuthorized(false);
+        this.authenticationService.setUserPin(null);
+        this.isAuthorized = false;
+      });
   }
+
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';

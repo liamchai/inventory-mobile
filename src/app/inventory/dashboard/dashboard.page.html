@@ -9,6 +9,8 @@
 
 <ion-content>
   <div class="content">
-    <ion-label> Welcome </ion-label>
+    <!-- TODO: need to change the content -->
+    <div *ngIf="isHacker">i'm Hacker</div>
+    <div *ngIf="!isHacker">i'm Not Hacker</div>
   </div>
 </ion-content>

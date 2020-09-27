@@ -1,26 +1,18 @@
 import { Injectable } from '@angular/core';
-import { DatabaseService } from './database.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  db: any;
   isAuthorized: boolean;
   userPin: number;
-  constructor(private databaseService: DatabaseService) {
-    this.db = this.databaseService.db;
+  constructor() {}
+
+  setIsAuthorized(isAuthorized: boolean) {
+    this.isAuthorized = isAuthorized;
   }
 
-  login(userPin: number) {
-    this.db
-      .get(userPin)
-      .then(() => {
-        this.isAuthorized = true;
-        this.userPin = userPin;
-      })
-      .catch(() => {
-        this.isAuthorized = false;
-      });
+  setUserPin(userPin: number) {
+    this.userPin = userPin;
   }
 }
