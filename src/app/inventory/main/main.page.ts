@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-main',
@@ -6,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  constructor() {}
+  constructor(
+    private authenticationService: AuthenticationService,
+    private navController: NavController
+  ) {}
 
   ngOnInit() {}
+
+  onLogoutButtonClick() {
+    this.authenticationService.isAuthorized = false;
+    this.authenticationService.userPin = null;
+    this.navController.navigateRoot('home');
+  }
 }
