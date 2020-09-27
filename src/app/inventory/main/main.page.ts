@@ -8,10 +8,15 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
+  isGuest: boolean;
+
   constructor(
     private authenticationService: AuthenticationService,
     private navController: NavController
-  ) {}
+  ) {
+    // i dunno why using 3 = is false since userPin is a number
+    this.isGuest = this.authenticationService.userPin == 1234;
+  }
 
   ngOnInit() {}
 

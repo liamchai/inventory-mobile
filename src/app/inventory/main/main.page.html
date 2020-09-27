@@ -24,8 +24,8 @@
     </ion-grid>
     <ion-list>
       <ion-menu-toggle>
-        <ion-item>Item</ion-item>
-        <ion-item>Report</ion-item>
+        <ion-item *ngIf="!isGuest">Item</ion-item>
+        <ion-item *ngIf="!isGuest">Report</ion-item>
         <ion-item>Showcase</ion-item>
         <ion-item (click)="onLogoutButtonClick()">Logout</ion-item>
       </ion-menu-toggle>

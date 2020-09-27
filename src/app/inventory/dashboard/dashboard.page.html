@@ -11,6 +11,9 @@
   <div class="content">
     <!-- TODO: need to change the content -->
     <div *ngIf="isHacker">i'm Hacker</div>
-    <div *ngIf="!isHacker">i'm Not Hacker</div>
+    <div *ngIf="!isHacker">
+      i'm Not Hacker
+      <app-quote> </app-quote>
+    </div>
   </div>
 </ion-content>
