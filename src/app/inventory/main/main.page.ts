@@ -16,8 +16,8 @@ export class MainPage implements OnInit {
   ngOnInit() {}
 
   onLogoutButtonClick() {
-    this.authenticationService.isAuthorized = false;
-    this.authenticationService.userPin = null;
+    this.authenticationService.setIsAuthorized(false);
+    this.authenticationService.setUserPin(null);
     this.navController.navigateRoot('home');
   }
 }
