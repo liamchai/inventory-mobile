@@ -25,7 +25,8 @@ export class HomePage {
     this.db
       .get(this.userPin)
       .then(() => {
-        this.navController.navigateRoot('dashboard');
+        // not really understand this one
+        this.navController.navigateRoot(['/main/dashboard']);
       })
       .catch(() => {
         this.isUnauthorized = true;

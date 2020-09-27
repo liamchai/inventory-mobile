@@ -6,6 +6,15 @@ const routes: Routes = [
   {
     path: '',
     component: MainPage,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('../dashboard/dashboard.module').then(
+            (m) => m.DashboardPageModule
+          ),
+      },
+    ],
   },
 ];
 
