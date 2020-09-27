@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from 'src/app/guards/authentication.guard';
 import { MainPage } from './main.page';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
           import('../dashboard/dashboard.module').then(
             (m) => m.DashboardPageModule
           ),
+        canActivate: [AuthenticationGuard],
       },
     ],
   },
