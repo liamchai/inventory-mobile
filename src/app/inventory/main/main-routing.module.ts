@@ -16,6 +16,12 @@ const routes: Routes = [
           ),
         canActivate: [AuthenticationGuard],
       },
+      {
+        path: 'item',
+        loadChildren: () =>
+          import('../item/item.module').then((m) => m.ItemPageModule),
+        canActivate: [AuthenticationGuard],
+      },
     ],
   },
 ];
