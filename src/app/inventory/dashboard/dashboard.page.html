@@ -10,10 +10,36 @@
 <ion-content>
   <div class="content">
     <!-- TODO: need to change the content -->
-    <div *ngIf="isHacker">i'm Hacker</div>
+    <div *ngIf="isHacker">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="auto" class="white-card-container list-container">
+            <ion-label id="hacker">Hacker</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
     <div *ngIf="!isHacker">
-      i'm Not Hacker
-      <app-quote> </app-quote>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="auto" class="white-card-container list-container">
+            Welcome
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="auto" class="white-card-container list-container">
+            <ion-img
+              src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+            >
+            </ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="auto" class="white-card-container list-container">
+            <app-quote></app-quote>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
   </div>
 </ion-content>
