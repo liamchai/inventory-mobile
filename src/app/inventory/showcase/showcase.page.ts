@@ -8,6 +8,7 @@ import { Item } from 'src/app/models/item';
 })
 export class ShowcasePage implements OnInit {
   items: Item[];
+  // TODO get legit items and show it on view
   constructor() {
     this.items = [
       { name: 'faster', color: 'red', quantity: 10 },
