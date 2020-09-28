@@ -28,6 +28,14 @@ const routes: Routes = [
           import('../report/report.module').then((m) => m.ReportPageModule),
         canActivate: [AuthenticationGuard],
       },
+      {
+        path: 'showcase',
+        loadChildren: () =>
+          import('../showcase/showcase.module').then(
+            (m) => m.ShowcasePageModule
+          ),
+        canActivate: [AuthenticationGuard],
+      },
     ],
   },
 ];

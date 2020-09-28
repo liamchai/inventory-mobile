@@ -36,7 +36,9 @@
           routerDirection="root"
           >Report</ion-item
         >
-        <ion-item>Showcase</ion-item>
+        <ion-item [routerLink]="['/main/showcase']" routerDirection="root">
+          Showcase
+        </ion-item>
         <ion-item (click)="onLogoutButtonClick()">Logout</ion-item>
       </ion-menu-toggle>
     </ion-list>
