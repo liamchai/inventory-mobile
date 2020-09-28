@@ -1,0 +1,80 @@
+$randomNumber: random(5);
+
+#hacker {
+  -webkit-animation: color-change $randomNumber + s infinite;
+  -moz-animation: color-change $randomNumber + s infinite;
+  -o-animation: color-change $randomNumber + s infinite;
+  -ms-animation: color-change $randomNumber + s infinite;
+  animation: color-change $randomNumber + s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    color: black;
+    background-color: white;
+  }
+  50% {
+    color: white;
+    background-color: black;
+  }
+  100% {
+    color: black;
+    background-color: white;
+  }
+}
+@-moz-keyframes color-change {
+  0% {
+    color: black;
+    background-color: white;
+  }
+  50% {
+    color: white;
+    background-color: black;
+  }
+  100% {
+    color: black;
+    background-color: white;
+  }
+}
+@-ms-keyframes color-change {
+  0% {
+    color: black;
+    background-color: white;
+  }
+  50% {
+    color: white;
+    background-color: black;
+  }
+  100% {
+    color: black;
+    background-color: white;
+  }
+}
+@-o-keyframes color-change {
+  0% {
+    color: black;
+    background-color: white;
+  }
+  50% {
+    color: white;
+    background-color: black;
+  }
+  100% {
+    color: black;
+    background-color: white;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: black;
+    background-color: white;
+  }
+  50% {
+    color: white;
+    background-color: black;
+  }
+  100% {
+    color: black;
+    background-color: white;
+  }
+}

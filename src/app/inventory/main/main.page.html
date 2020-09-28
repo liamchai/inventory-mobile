@@ -1,0 +1,36 @@
+<ion-menu contentId="dashboard-main" type="push">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto" class="white-card-container list-container">
+          <ion-avatar>
+            <img
+              src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+            />
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto" class="white-card-container list-container">
+          <ion-label>ABC <br />Inv System </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>
+      <ion-menu-toggle>
+        <ion-item *ngIf="!isGuest">Item</ion-item>
+        <ion-item *ngIf="!isGuest">Report</ion-item>
+        <ion-item>Showcase</ion-item>
+        <ion-item (click)="onLogoutButtonClick()">Logout</ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="dashboard-main"></ion-router-outlet>
