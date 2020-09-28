@@ -30,7 +30,12 @@
           routerDirection="root"
           >Item</ion-item
         >
-        <ion-item *ngIf="!isGuest">Report</ion-item>
+        <ion-item
+          *ngIf="!isGuest"
+          [routerLink]="['/main/report']"
+          routerDirection="root"
+          >Report</ion-item
+        >
         <ion-item>Showcase</ion-item>
         <ion-item (click)="onLogoutButtonClick()">Logout</ion-item>
       </ion-menu-toggle>

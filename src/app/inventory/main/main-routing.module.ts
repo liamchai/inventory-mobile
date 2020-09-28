@@ -22,6 +22,12 @@ const routes: Routes = [
           import('../item/item.module').then((m) => m.ItemPageModule),
         canActivate: [AuthenticationGuard],
       },
+      {
+        path: 'report',
+        loadChildren: () =>
+          import('../report/report.module').then((m) => m.ReportPageModule),
+        canActivate: [AuthenticationGuard],
+      },
     ],
   },
 ];
