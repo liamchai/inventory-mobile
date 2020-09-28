@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- TODO: Fix View -->
+    <ion-item lines="none" *ngFor="let itemCategory of itemCategories">
+      <ion-grid>
+        <ion-row>
+          <ion-label>{{ itemCategory.name }}</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-card *ngFor="let item of itemCategory.items">
+            <ion-col size="4">
+              <ion-card-content>
+                <ion-label>
+                  <ion-label slot="end" *ngIf="item.quantity < 10"
+                    >&lt; 10</ion-label
+                  ><br />
+                  {{item.name}}<br />
+                  {{item.color}} <br />
+                  {{item.quantity}}
+                </ion-label>
+              </ion-card-content>
+            </ion-col>
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
