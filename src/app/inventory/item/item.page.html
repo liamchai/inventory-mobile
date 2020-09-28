@@ -16,8 +16,8 @@
           <ion-label>{{ itemCategory.name }}</ion-label>
         </ion-row>
         <ion-row>
-          <ion-card *ngFor="let item of itemCategory.items">
-            <ion-col size="4">
+          <ion-col size="4" *ngFor="let item of itemCategory.items">
+            <ion-card>
               <ion-card-content>
                 <ion-label>
                   <ion-label slot="end" *ngIf="item.quantity < 10"
@@ -28,8 +28,8 @@
                   {{item.quantity}}
                 </ion-label>
               </ion-card-content>
-            </ion-col>
-          </ion-card>
+            </ion-card>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
