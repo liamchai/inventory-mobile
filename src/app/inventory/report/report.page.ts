@@ -20,10 +20,8 @@ export class ReportPage implements OnInit {
     this.pieChart = new Chart(this.pieCanvas.nativeElement, {
       type: 'pie',
       data: {
-        labels: ['Pen', 'Minuman'],
         datasets: [
           {
-            data: [110, 20],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -44,5 +42,18 @@ export class ReportPage implements OnInit {
         ],
       },
     });
+  }
+
+  ionViewDidEnter() {
+    this.addData('Pen', 200);
+    this.addData('Minuman', 120);
+  }
+
+  addData(label: string, data: number) {
+    this.pieChart.data.labels.push(label);
+    this.pieChart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+    });
+    this.pieChart.update();
   }
 }
