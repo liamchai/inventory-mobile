@@ -14,15 +14,13 @@ export class MainPage implements OnInit {
     private authenticationService: AuthenticationService,
     private navController: NavController
   ) {
-    // i dunno why using 3 = is false since userPin is a number
-    this.isGuest = this.authenticationService.userPin == 1234;
+    this.isGuest = this.authenticationService.isGuest();
   }
 
   ngOnInit() {}
 
   onLogoutButtonClick() {
     this.authenticationService.setIsAuthorized(false);
-    this.authenticationService.setUserPin(null);
     this.navController.navigateRoot('home');
   }
 }

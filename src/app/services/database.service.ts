@@ -26,7 +26,7 @@ export class DatabaseService {
       skip_setup: true,
     };
 
-    this.db.sync(this.remote, options);
+    // this.db.sync(this.remote, options);
   }
 
   userSeeder() {

@@ -9,8 +9,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class DashboardPage implements OnInit {
   isHacker: boolean;
   constructor(private authenticationService: AuthenticationService) {
-    // i dunno why using 3 = is false since userPin is a number
-    this.isHacker = this.authenticationService.userPin == 1337;
+    this.isHacker = this.authenticationService.isHacker();
   }
 
   ngOnInit() {}

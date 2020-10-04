@@ -24,18 +24,20 @@ export class HomePage {
   }
 
   onLoginButtonClick() {
-    this.db
-      .get(this.userPin)
-      .then(() => {
-        this.authenticationService.setIsAuthorized(true);
-        this.authenticationService.setUserPin(this.userPin);
-        this.isAuthorized = true;
-        this.navController.navigateRoot(['main/dashboard']);
+    this.authenticationService
+      .login(this.userPin)
+      .then((res) => {
+        if (res != null) {
+          this.authenticationService.setIsAuthorized(true);
+          this.isAuthorized = true;
+          this.navController.navigateRoot(['main/dashboard']);
+        } else {
+          this.authenticationService.setIsAuthorized(false);
+          this.isAuthorized = false;
+        }
       })
-      .catch(() => {
-        this.authenticationService.setIsAuthorized(false);
-        this.authenticationService.setUserPin(null);
-        this.isAuthorized = false;
+      .catch((err) => {
+        console.log(err);
       });
   }
 
