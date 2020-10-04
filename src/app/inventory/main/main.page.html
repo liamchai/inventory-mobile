@@ -26,17 +26,23 @@
       <ion-menu-toggle>
         <ion-item
           *ngIf="!isGuest"
+          [routerLinkActive]="['active-link']"
           [routerLink]="['/main/item']"
           routerDirection="root"
           >Item</ion-item
         >
         <ion-item
           *ngIf="!isGuest"
+          [routerLinkActive]="['active-link']"
           [routerLink]="['/main/report']"
           routerDirection="root"
           >Report</ion-item
         >
-        <ion-item [routerLink]="['/main/showcase']" routerDirection="root">
+        <ion-item
+          [routerLink]="['/main/showcase']"
+          [routerLinkActive]="['active-link']"
+          routerDirection="root"
+        >
           Showcase
         </ion-item>
         <ion-item (click)="onLogoutButtonClick()">Logout</ion-item>

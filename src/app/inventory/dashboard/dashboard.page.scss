@@ -78,3 +78,19 @@ $randomNumber: random(5);
     background-color: white;
   }
 }
+
+ion-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+ion-grid {
+  height: 100%;
+  ion-row {
+    ion-col {
+      vertical-align: middle;
+    }
+  }
+}

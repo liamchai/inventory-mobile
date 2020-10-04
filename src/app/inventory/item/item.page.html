@@ -19,14 +19,28 @@
           <ion-col size="4" *ngFor="let item of itemCategory.items">
             <ion-card>
               <ion-card-content>
-                <ion-label>
-                  <ion-label slot="end" *ngIf="item.quantity < 10"
-                    >&lt; 10</ion-label
-                  ><br />
-                  {{item.name}}<br />
-                  {{item.color}} <br />
-                  {{item.quantity}}
-                </ion-label>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="8">{{item.name}}</ion-col>
+                    <ion-col
+                      size="4"
+                      style="color: red"
+                      *ngIf="item.quantity < 10"
+                      >&lt; 10</ion-col
+                    >
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      {{item.color == null ? 'No Color' : item.color}}
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      {{item.quantity == 'Infinity' ? '&#8734;' :
+                      item.quantity}}
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
               </ion-card-content>
             </ion-card>
           </ion-col>
