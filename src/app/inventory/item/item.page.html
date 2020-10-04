@@ -10,7 +10,10 @@
 <ion-content>
   <ion-list>
     <!-- TODO: Fix View -->
-    <ion-item lines="none" *ngFor="let itemCategory of itemCategories">
+    <ion-item
+      lines="none"
+      *ngFor="let itemCategory of (itemCategories$ | async)"
+    >
       <ion-grid>
         <ion-row>
           <ion-label>{{ itemCategory.name }}</ion-label>
